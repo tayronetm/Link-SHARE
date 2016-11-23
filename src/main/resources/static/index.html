@@ -1,0 +1,34 @@
+<html ng-app="shareLink">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<head>
+	<meta charset="utf-8">
+	<title>Busca Links</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+	<script src="app.js"></script>
+	<script src="js/angular-base64-upload.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-S7YMK1xjUjSpEnF4P8hPUcgjXYLZKK3fQW1j5ObLSl787II9p8RO9XUGehRmKsxd" crossorigin="anonymous">
+	<style>
+		body 		{ padding-top:80px; }
+	</style>
+	<base href="/">
+
+	<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+	<script>
+  // Initialize Firebase
+				var config = {
+				apiKey: "AIzaSyCN2v6Sjq3AIgxwXezXlNy9BNK1kuJrsEA",
+				authDomain: "projeto-tap.firebaseapp.com",
+				databaseURL: "https://projeto-tap.firebaseio.com",
+				storageBucket: "projeto-tap.appspot.com",
+				messagingSenderId: "503769241647"
+  };
+  			 	firebase.initializeApp(config);
+</script>
+</head>
+<body>
+
+<div ng-view></div>
+
+</body>
+</html>

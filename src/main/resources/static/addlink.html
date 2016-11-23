@@ -1,0 +1,60 @@
+<div ng-controller="shareLinkController as shareLink">
+    <div class="jumbotron text-center">
+        <h1><span class="fa fa-lock"></span> Link Network </h1>
+    </div>
+
+    <h1>Adicionar conteúdo</h1>
+
+
+    <div class="clearfix"></div><br />
+
+    <div class="container">
+
+        
+         <form method='post'>
+     
+        <table class='table table-bordered'>
+     
+            <tr>
+                <td>Link</td>
+                <td><input type='text' name='nome' class='form-control' ng-model="shareLink.link.link" required></td>
+            </tr>
+     
+            <tr>
+                <td>Descrição</td>
+                <td><input type='text' name='desc' class='form-control' ng-model="shareLink.link.description" required></td>
+            </tr>
+     
+            <tr>
+                <td>Tags</td>
+                <td><input type='text' name='tag' class='form-control' ng-model="shareLink.link.tag" required></td>
+            </tr>
+            <tr>
+                <td>Avalie</td>
+                <td><input type='number' name='rate' class='form-control' ng-model="shareLink.link.rate" required></td>
+            </tr>
+            <tr>
+                <td>Imagem</td>
+                <td><input type="file" ng-model="shareLink.link.img" base-sixty-four-input></td>
+            </tr>
+     
+            <tr>
+                <td colspan="2">
+                
+                <a href="#/listlinks" class="btn btn-large btn-success" ng-click="shareLink.postLink()" > &nbsp; Adicionar</a>
+
+           
+                <a href="#/listlinks" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Voltar à pagina principal</a>
+
+
+                </td>
+            </tr>
+     
+        </table>
+</form>
+     
+     
+</div>
+    
+
+</div>
