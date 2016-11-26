@@ -10,5 +10,4 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource(collectionResourceRel = "link", path = "link")
 public interface LinkRepository extends MongoRepository<Link, String> {
 
-
 }

@@ -10,7 +10,9 @@ public class Link {
 	private String img;
 	private String tag;
 	private String description;
+	private String ownerEmail;
 	private int rate;
+	private int rateQnt;
 
 	public String getId() {
 		return id;
@@ -52,6 +54,14 @@ public class Link {
 		this.description = description;
 	}
 
+	public String getOwnerEmail() {
+		return ownerEmail;
+	}
+
+	public void setOwnerEmail(String ownerEmail) {
+		this.ownerEmail = ownerEmail;
+	}
+
 	public int getRate() {
 		return rate;
 	}
@@ -59,4 +69,12 @@ public class Link {
 	public void setRate(int rate) {
 		this.rate = rate;
 	}
+
+	public void setRateQnt(int rateQnt) {
+		this.rateQnt = rateQnt;
+	}
+	public int getRateQnt() {
+		return rateQnt;
+	}
+
 }

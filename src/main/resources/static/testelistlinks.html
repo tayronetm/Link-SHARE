@@ -1,0 +1,223 @@
+<style type="text/css">
+
+.image{
+  display: inline-block;  
+  width: 200px;
+  border-right: 90px;
+  min-height: 200px;
+  max-height: 200px;
+  box-shadow: 10px 10px 24px 8px rgba(219,219,219,1);
+  border-radius: 50%;
+  margin-top: 100px;
+
+
+}
+.textPosition{
+  margin-right: 10px;
+
+}
+.rightContainer{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.star{
+    width: 40px;
+    margin-bottom: 30px;
+}
+
+
+</style>
+
+
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<link href="/teste/css/bootstrap.min.css" rel="stylesheet">
+<link href="teste/css/style.css" rel="stylesheet">
+<link href="/teste/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+<!-- ABOUT US STARTS HERE-->
+<section class='aboutus' id='about'>
+<div class='container'>
+    <div ng-controller="shareLinkController as shareLink" ng-init="shareLink.getLinks()">
+         <div class="jumbotron text-center">
+            <h1></span> Links da semana </h1>
+    <a href="#/testeaddlink" class="btn btn-default"></span> Adicionar outro link</a>
+    <a href="#/testeindex" class="btn btn-default"><span class="fa fa-user"></span> Voltar</a>
+</div>
+<ul>
+
+    <div>
+        <a ng-repeat="item in shareLink.links" href="http://{{item.link}}"><img class="image" data-ng-src="{{shareLink.getImage(item.img)}}"/>
+        <div class="textPosition">
+        <ul>
+            <ul>
+                <font size="5">{{item.link}}</font>
+            </ul>
+
+            <ul><span>{{item.description}}</span></ul>
+
+            <ul>
+                <font size="1">{{item.tag}}</font>
+            </ul>
+            
+            <ul>
+                <div class="rating">
+                    <img ng-if="item.rate == 5" class="star" src="img/star.png"/>
+                    <img ng-if="item.rate >= 4" class="star" src="img/star.png"/>
+                    <img ng-if="item.rate >= 3" class="star" src="img/star.png"/>
+                    <img ng-if="item.rate >= 2" class="star" src="img/star.png"/>
+                    <img ng-if="item.rate >= 1" class="star" src="img/star.png"/>
+                    
+                </div>
+            </div>
+            </ul>
+        </a>
+      </div>      
+
+        </ul>
+        </div>
+    </div>
+
+
+</section>
+
+<section class="ourmission " id='mission'>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 yomer-text-center">
+                    <h3>“Estamos em todas as plataformas e totalizamos 1 milhão de usuários no ultimo trimestre”</h3> 
+                    <small>Seja você também mais um dos nossos</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--/ OUR FEATURE ENDS  HERE-->
+<!--WHY CHOSE STARTS HERE HERE-->
+
+    
+    
+    
+    <!-- FOOTER STARTS HERE-->
+<section class="testimonial " id='testimonial'>
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">
+                    <div class="yomer-text-center">
+                        <h2>Opniões dos nossos usuários</h2>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    </div>
+                    <div class="gap"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                            </blockquote>
+                            <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                            </blockquote>
+                        </div>
+                        <div class="col-md-6">
+                            <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                            </blockquote>
+                            <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--/ FOOTER ENDS HERE-->
+
+<!-- SOCIAL STARTS HERE-->
+<section class="social " id='social'>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="social_icons">
+          <ul>
+            <li class="facebook"> <a href="#." data-scroll-reveal="wait 0.25s, then enter top and move 40px over 1s"><i class="fa fa-facebook"></i> </a> </li>
+            <li class="twitter"> <a href="#." data-scroll-reveal="wait 0.25s, then enter top and move 40px over 1s"><i class="fa fa-twitter"></i> </a> </li>
+            <li class="dribbble"> <a href="#." data-scroll-reveal="wait 0.25s, then enter top and move 40px over 1s"><i class="fa fa-dribbble"></i> </a> </li>
+            <li class="googleplus"> <a href="#." data-scroll-reveal="wait 0.25s, then enter top and move 40px over 1s"><i class="fa fa-google"></i> </a> </li>
+            <li class="linkedin "> <a href="#." data-scroll-reveal="wait 0.25s, then enter top and move 40px over 1s"><i class="fa fa-linkedin"></i> </a> </li>
+            <li class="pinterest"> <a href="#." data-scroll-reveal="wait 0.25s, then enter top and move 40px over 1s"><i class="fa fa-pinterest"></i> </a> </li>
+          </ul>
+        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--/ SOCIAL ENDS HERE-->
+
+
+
+</div> <!-- /WRAPPER ENDS HERE DESIGNED BY VIJAYAN PP-->
+<script type='text/javascript' src='teste/js/jquery.js'></script>
+<script type='text/javascript' src='teste/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='teste/js/scrollReveal.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(){  
+        
+            
+                $(".top").click(function(){
+                    $("html, body").animate({ scrollTop: 0 }, "slow");
+                    return false;
+                });
+                $(".btMenu").click(function(){
+            
+                    if($(".menu").children(".menuItem").css("display") == "none"){
+                        $(".menu").children(".menuItem").slideDown();
+                    }
+                    else{
+                        $(".menu").children(".menuItem").slideUp();
+                    }
+                });
+                $(window).resize(function(){
+                    if($(window).innerWidth() > 900){
+                        $(".menu").children(".menuItem").css("display", "block");
+                    }
+                    else{
+                        $(".menu").children(".menuItem").css("display", "none");
+                    }
+                });
+                
+                (function(k){'use strict';k(['jquery'],function($){var j=$.scrollTo=function(a,b,c){return $(window).scrollTo(a,b,c)};j.defaults={axis:'xy',duration:parseFloat($.fn.jquery)>=1.3?0:1,limit:!0};j.window=function(a){return $(window)._scrollable()};$.fn._scrollable=function(){return this.map(function(){var a=this,isWin=!a.nodeName||$.inArray(a.nodeName.toLowerCase(),['iframe','#document','html','body'])!=-1;if(!isWin)return a;var b=(a.contentWindow||a).document||a.ownerDocument||a;return/webkit/i.test(navigator.userAgent)||b.compatMode=='BackCompat'?b.body:b.documentElement})};$.fn.scrollTo=function(f,g,h){if(typeof g=='object'){h=g;g=0}if(typeof h=='function')h={onAfter:h};if(f=='max')f=9e9;h=$.extend({},j.defaults,h);g=g||h.duration;h.queue=h.queue&&h.axis.length>1;if(h.queue)g/=2;h.offset=both(h.offset);h.over=both(h.over);return this._scrollable().each(function(){if(f==null)return;var d=this,$elem=$(d),targ=f,toff,attr={},win=$elem.is('html,body');switch(typeof targ){case'number':case'string':if(/^([+-]=?)?\d+(\.\d+)?(px|%)?$/.test(targ)){targ=both(targ);break}targ=win?$(targ):$(targ,this);if(!targ.length)return;case'object':if(targ.is||targ.style)toff=(targ=$(targ)).offset()}var e=$.isFunction(h.offset)&&h.offset(d,targ)||h.offset;$.each(h.axis.split(''),function(i,a){var b=a=='x'?'Left':'Top',pos=b.toLowerCase(),key='scroll'+b,old=d[key],max=j.max(d,a);if(toff){attr[key]=toff[pos]+(win?0:old-$elem.offset()[pos]);if(h.margin){attr[key]-=parseInt(targ.css('margin'+b))||0;attr[key]-=parseInt(targ.css('border'+b+'Width'))||0}attr[key]+=e[pos]||0;if(h.over[pos])attr[key]+=targ[a=='x'?'width':'height']()*h.over[pos]}else{var c=targ[pos];attr[key]=c.slice&&c.slice(-1)=='%'?parseFloat(c)/100*max:c}if(h.limit&&/^\d+$/.test(attr[key]))attr[key]=attr[key]<=0?0:Math.min(attr[key],max);if(!i&&h.queue){if(old!=attr[key])animate(h.onAfterFirst);delete attr[key]}});animate(h.onAfter);function animate(a){$elem.animate(attr,g,h.easing,a&&function(){a.call(this,targ,h)})}}).end()};j.max=function(a,b){var c=b=='x'?'Width':'Height',scroll='scroll'+c;if(!$(a).is('html,body'))return a[scroll]-$(a)[c.toLowerCase()]();var d='client'+c,html=a.ownerDocument.documentElement,body=a.ownerDocument.body;return Math.max(html[scroll],body[scroll])-Math.min(html[d],body[d])};function both(a){return $.isFunction(a)||typeof a=='object'?a:{top:a,left:a}}return j})}(typeof define==='function'&&define.amd?define:function(a,b){if(typeof module!=='undefined'&&module.exports){module.exports=b(require('jquery'))}else{b(jQuery)}}));
+                
+                $(".menu").children("li:nth-child(3)").click(function(){
+                $("body").scrollTo("#about", 600);
+                                
+                });
+                
+                $(".menu").children("li:nth-child(4)").click(function(){
+                $("body").scrollTo("#mission", 600);
+                });
+                
+                $(".menu").children("li:nth-child(5)").click(function(){
+                
+                $("body").scrollTo("#whyus", 600);
+                });
+                
+                $(".menu").children("li:nth-child(6)").click(function(){
+                $("body").scrollTo("#whychose", 600);
+                });
+                
+            });
+
+            (function($) {
+      window.scrollReveal = new scrollReveal();
+    })();
+            
+</script>
+</div>

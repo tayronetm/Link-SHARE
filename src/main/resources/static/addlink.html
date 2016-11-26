@@ -1,9 +1,24 @@
-<div ng-controller="shareLinkController as shareLink">
-    <div class="jumbotron text-center">
-        <h1><span class="fa fa-lock"></span> Link Network </h1>
-    </div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de links</title>
+  <link rel="import" href="teste/css/links.css">
+  <link rel="import" href="teste/css/snip1217.css">
+</head>
+<body>
 
-    <h1>Adicionar conteúdo</h1>
+<ul  style="background-color: #4285f4;" class="snip1217">
+  <li class="current"><a href="#/listlinks" data-hover="Home">Página principal</a></li>
+  <li><a href="#/sobre" data-hover="About Us">Quem somos</a></li>
+  <li><a href="#/addlink" data-hover="Blog">Adicionar link</a></li>
+  <li><a href="#/contato" data-hover="Contact">Contato</a></li>
+</ul>
+
+<div ng-controller="shareLinkController as shareLink">
+    <div  style="background-color: #4285f4;" class="jumbotron text-center">
+        <h1><span class="fa fa-lock"></span> Adicionar link </h1>
+        <small>Para adicionar um link é simples, preencha os campos abaixo em seguida clique no botão Adicionar.</small>
+    </div>
 
 
     <div class="clearfix"></div><br />
@@ -11,7 +26,7 @@
     <div class="container">
 
         
-         <form method='post'>
+         <form name="formLink" method='post'>
      
         <table class='table table-bordered'>
      
@@ -35,13 +50,13 @@
             </tr>
             <tr>
                 <td>Imagem</td>
-                <td><input type="file" ng-model="shareLink.link.img" base-sixty-four-input></td>
+                <td><input type="file" ng-model="shareLink.link.img" base-sixty-four-input required></td>
             </tr>
      
             <tr>
                 <td colspan="2">
                 
-                <a href="#/listlinks" class="btn btn-large btn-success" ng-click="shareLink.postLink()" > &nbsp; Adicionar</a>
+                <a href="#/listlinks" class="btn btn-large btn-success" ng-if="formLink.$valid" ng-click="shareLink.postLink()" > &nbsp; Adicionar</a>
 
            
                 <a href="#/listlinks" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Voltar à pagina principal</a>
@@ -58,3 +73,5 @@
     
 
 </div>
+</body>
+</html>

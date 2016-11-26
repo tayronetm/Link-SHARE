@@ -1,4 +1,12 @@
-<style type="text/css">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de links</title>
+
+  <link rel="stylesheet" href="teste/css/links.css">
+  <link rel="stylesheet" href="teste/css/snip1217.css">
+
+  <style type="text/css">
 .leftContainer{
   display: flex;
   align-items: flex-start;
@@ -6,8 +14,8 @@
 }
 .rightContainer{
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .centerContainer{
@@ -23,42 +31,97 @@
     width: 400px;
     min-height: 128px;
     max-height: 128px;
-    margin-left: 20px;
-    margin-top: 60px;
-    display: inherit;
     color: blue;
     background-color: #fff;
--webkit-box-shadow: 10px 10px 24px 8px rgba(219,219,219,1);
--moz-box-shadow: 10px 10px 24px 8px rgba(219,219,219,1);
-box-shadow: 10px 10px 24px 8px rgba(219,219,219,1);
+-webkit-box-shadow: 10px 10px 24px 8px #898984;
+-moz-box-shadow: 10px 10px 24px 8px #898984;
+box-shadow: 10px 10px 24px 8px #898984;
+}
+.boxContainer{
+    width: 500px;
+    min-height: 150px;
+    max-height: 150px;
+    margin-top: 20px;
+    display: inline-flex;
 }
 .image{
   width: 150px;
   min-height: 150px;
   max-height: 150px;
-  box-shadow: 10px 10px 24px 8px rgba(219,219,219,1);
+  box-shadow: 10px 10px 24px 8px #898984;
   border-radius: 50%;
   margin-left: -50px;
   margin-top: -8px;
   align-self: flex-start;
 }
+.imageProfile{
+  width: 50px;
+  min-height: 50px;
+  max-height: 50px;
+  box-shadow: 2px 2px 2px 2px #898984;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-top: 5px;
+  align-self: flex-start;
+}
 .star{
     width: 40px;
 }
+.btn-rounded-delete{
+  width: 48px;
+    min-height: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+    margin-left: 210px;
+    margin-top: -80px;
+    background-color: #F44336;
+    align-self: flex-end;
+    position: absolute;
+}
+.btn-rounded-delete img{
+  width: 24px;
+  height: 24px;
+}
+
 
 </style>
-
+</head>
+<body>
 <div ng-controller="shareLinkController as shareLink" ng-init="shareLink.getLinks()">
-<div class="jumbotron text-center">
-	<h1><span class="fa fa-lock"></span> Lista de links </h1>
-	<a href="#/addlink" class="btn btn-default"><span class="fa fa-user"></span> Adicionar outro</a>
-	<a href="#/" class="btn btn-default"><span class="fa fa-user"></span> Voltar</a>
+<div style="background-color: #4285f4;" >
+  <div class="rightContainer">
+    <img class="imageProfile" ng-src="{{shareLink.getUser().photoURL}}"/>
+    <font size="2">Olá, {{shareLink.getUser().displayName}}</font>
+  </div>
+  <ul class="snip1217 centerContainer">
+    <li class="current"><a href="#/listlinks" data-hover="Home">Página principal</a></li>
+    <li><a href="#/sobre" data-hover="About Us">Quem somos</a></li>
+    <li><a href="#/addlink" data-hover="Blog">Adicionar link</a></li>
+    <li><a href="#/contato" data-hover="Contact">Contato</a></li>
+  </ul>
 </div>
-<ul>
 
-<li ng-repeat="item in shareLink.links" class="box">
 
-    <div class=" fullspace leftContainer">
+<div style="background-color: #4285f4;margin-top: 0px;" class="jumbotron text-center">
+	<h1>Lista de links </h1>
+  <small>Fique à vontade para escolher um dos links abaixo postados por nossos usuários.</small>
+
+</div>
+
+
+<div class='centerContainer'>
+    <button class="btn btn-large btn-success" ng-click="shareLink.orderBy('-rate')">Melhores Avaliações</button>
+    <button class="btn btn-large btn-success" ng-click="shareLink.orderBy('rate')">Piores Avaliações</button>
+    <button class="btn btn-large btn-success" ng-click="shareLink.orderBy('link')">A - Z</button>
+    <button class="btn btn-large btn-success" ng-click="shareLink.orderBy('-link')">Z - A</button>
+</div>
+
+<div class="fullspace">
+
+  <div ng-repeat="item in shareLink.links | orderBy:shareLink.orderByWhat" ng-mouseover="item.hover=true" ng-mouseleave="item.hover=false" class="boxContainer centerContainer">
+  <button class="btn-rounded-delete" ng-if="item.hover" ng-click="shareLink.delete(item)"><img src="img/delete.svg"></button>
+
+    <div class="leftContainer box">
         <a href="http://{{item.link}}"><img class="image" data-ng-src="{{shareLink.getImage(item.img)}}"/></a>
         <div class="rightContainer">
         <ul style="list-style-type: none;">
@@ -71,6 +134,9 @@ box-shadow: 10px 10px 24px 8px rgba(219,219,219,1);
             <li>
                 <font size="1">{{item.tag}}</font>
             </li>
+            <li>
+                <font size="1">{{item.ownerEmail}}</font>
+            </li>
             
             <li>
                 <div class="rating">
@@ -82,14 +148,15 @@ box-shadow: 10px 10px 24px 8px rgba(219,219,219,1);
                     
                 </div>
             </li>
-
-            
-
-        </ul>
-        </div>
+          </ul>
+        </div>             
     </div>
 
-    
-</li>
-</ul>
+  </div>
+  
 </div>
+
+
+  </div>
+</body>
+</html>

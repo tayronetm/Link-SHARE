@@ -1,0 +1,78 @@
+<div ng-controller="shareLinkController as shareLink" ng-init="shareLink.getLinks()">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>
+Yomer-Stylish Landing Page Template
+</title>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<link href="/teste/css/bootstrap.min.css" rel="stylesheet">
+<link href="teste/css/style.css" rel="stylesheet">
+<link href="/teste/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+
+<header><!-- HEADER STARTS HERE-->
+
+
+<div class='container titles yomer-text-center'>
+<h1 data-scroll-reveal="wait 0.25s, then enter top and move 40px over 1s">Acesse os campos abaixo para adicionar o link que você deseja</h1>
+
+
+
+    <div class="clearfix"></div><br />
+
+    <div class="container">
+
+        
+         <form method='post'>
+     
+        <table class='table table-condensed'>
+     
+            <tr>
+                <td><font size="5" color="white">Link</font>
+                <td><input type='text' name='nome' class='form-control' ng-model="shareLink.link.link" required></td>
+            </tr>
+     
+            <tr>
+                 <td><font size="5" color="white">Descrição</font>
+                <td><input type='text' name='desc' class='form-control' ng-model="shareLink.link.description" required></td>
+            </tr>
+     
+            <tr>
+                 <td><font size="5" color="white">Tags</font>
+                <td><input type='text' name='tag' class='form-control' ng-model="shareLink.link.tag" required></td>
+            </tr>
+            <tr>
+                 <td><font size="5" color="white">Avalie de 1 a 5</font>
+                <td><input type='number' name='rate' class='form-control' ng-model="shareLink.link.rate" required></td>
+            </tr>
+            <tr>
+                 <td><font size="5" color="white">Buscar imagem</font>
+                <td><input type="file" ng-model="shareLink.link.img" base-sixty-four-input></td>
+            </tr>
+     
+            <tr>
+                <td colspan="2">
+                
+                <a href="#/testelistlinks" class="btn btn-large btn-success" ng-click="shareLink.postLink()" > &nbsp; Adicionar</a>
+
+           
+                <a href="#/testelistlinks" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Voltar à pagina principal</a>
+
+
+                </td>
+            </tr>
+     
+        </table>
+</form>>
+ 
+
+
+</header><!-- /HEADER ENDS HERE-->
+
+</body>
+</html>

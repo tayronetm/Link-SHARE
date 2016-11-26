@@ -1,0 +1,38 @@
+<div ng-controller="shareLinkController as shareLink" ng-init="shareLink.getLinks()">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<link href="/teste/css/bootstrap.min.css" rel="stylesheet">
+<link href="teste/css/style.css" rel="stylesheet">
+<link href="/teste/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+<body>
+
+
+
+
+<header>
+
+<div class='container titles yomer-text-center'>
+    <h1 > Bem vindo ao maior compartilhador de links do mundo!</h1>
+
+<div class='subhead'>
+ <p>Para acessar nossos links é facil, basta clicar no botão abaixo e logar-se através da sua conta do Google!</p> 
+
+ <div class='buttons'>
+<form method="POST" action="#">
+                        <a title="Continue with Google" href="" ng-click="shareLink.authGoogle()" class="btn btn-danger"> Continue with Google </a>
+                    
+                    </form>
+                  
+                    </form>
+
+
+</header>
+
+</body>
+</html>
