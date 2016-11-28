@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lista de links</title>
-  <link rel="import" href="teste/css/links.css">
-  <link rel="import" href="teste/css/snip1217.css">
+  <title>Adicionar link</title>
+  <link rel="stylesheet" href="teste/css/links.css">
+  <link rel="stylesheet" href="teste/css/snip1217.css">
 </head>
 <body>
 
-<ul  style="background-color: #4285f4;" class="snip1217">
-  <li class="current"><a href="#/listlinks" data-hover="Home">Página principal</a></li>
-  <li><a href="#/sobre" data-hover="About Us">Quem somos</a></li>
-  <li><a href="#/addlink" data-hover="Blog">Adicionar link</a></li>
-  <li><a href="#/contato" data-hover="Contact">Contato</a></li>
-</ul>
+<div ng-controller="shareLinkController as shareLink" ng-init="shareLink.getLinks()">
+<div style="background-color: #1C1C1C;" >
+  <div class="rightContainer">
+    <!--<img class="imageProfile" ng-src="{{shareLink.getUser().photoURL}}"/>-->
+ 
+  </div>
+  <ul class="snip1217 centerContainer">
+    <li class="current"><a href="#/listlinks" data-hover="Home">Página principal</a></li>
+    <li><a href="#/sobre" data-hover="About Us">Quem somos</a></li>
+    <li><a href="#/addlink" data-hover="Blog">Adicionar link</a></li>
+    <li><a href="#/contato" data-hover="Contact">Contato</a></li>
+    <li font size="2">Olá, {{shareLink.getUser().displayName}}</li>
+  </ul>
+</div>
+
 
 <div ng-controller="shareLinkController as shareLink">
-    <div  style="background-color: #4285f4;" class="jumbotron text-center">
+    <div  style="background-color: #1C1C1C;" class="jumbotron text-center">
         <h1><span class="fa fa-lock"></span> Adicionar link </h1>
-        <small>Para adicionar um link é simples, preencha os campos abaixo em seguida clique no botão Adicionar.</small>
     </div>
 
 
@@ -28,48 +36,46 @@
         
          <form name="formLink" method='post'>
      
-        <table class='table table-bordered'>
+        <table class='table'>
      
             <tr>
-                <td>Link</td>
+                <td><font size="3" color="black">Link</font></td>
                 <td><input type='text' name='nome' class='form-control' ng-model="shareLink.link.link" required></td>
             </tr>
      
             <tr>
-                <td>Descrição</td>
+                <td><font size="3" color="black">Descrição</font></td>
                 <td><input type='text' name='desc' class='form-control' ng-model="shareLink.link.description" required></td>
             </tr>
      
             <tr>
-                <td>Tags</td>
+                <td><font size="3" color="black">Tags</font></td>
                 <td><input type='text' name='tag' class='form-control' ng-model="shareLink.link.tag" required></td>
             </tr>
             <tr>
-                <td>Avalie</td>
+                <td><font size="3" color="black">Avaliação</font></td>
                 <td><input type='number' name='rate' class='form-control' ng-model="shareLink.link.rate" required></td>
             </tr>
             <tr>
-                <td>Imagem</td>
+                <td><font size="3" color="black">Imagem</font></td>
                 <td><input type="file" ng-model="shareLink.link.img" base-sixty-four-input required></td>
             </tr>
      
             <tr>
                 <td colspan="2">
                 
-                <a href="#/listlinks" class="btn btn-large btn-success" ng-if="formLink.$valid" ng-click="shareLink.postLink()" > &nbsp; Adicionar</a>
+                <a href="#/listlinks" class="btn btn-large btn-primary" ng-if="formLink.$valid" ng-click="shareLink.postLink()" > &nbsp; Adicionar</a>
 
            
-                <a href="#/listlinks" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Voltar à pagina principal</a>
+                <a href="#/listlinks" class="btn btn-large btn-primary"><i class="glyphicon glyphicon-backward"></i> &nbsp; Voltar à pagina principal</a>
 
 
                 </td>
             </tr>
      
         </table>
-</form>
-     
-     
-</div>
+
+
     
 
 </div>

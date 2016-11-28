@@ -46,6 +46,10 @@ var app = angular.module('shareLink', ['ngRoute','naif.base64'])
        .when("/slides", {
                        templateUrl : "slides.html"
        })
+         .when("/wowslider", {
+                       templateUrl : "wowslider.html"
+       })
+     
      
        .otherwise({
                template : "index.html"
@@ -130,7 +134,7 @@ app.controller('shareLinkController', function($location,$http,$rootScope) {
     shareLink.postLink = function() {
 
     shareLink.link.img = shareLink.link.img.base64;
-    shareLink.link.ownerEmail = $rootScope.user.email;      
+    //areLink.link.ownerEmail = $rootScope.user.email;      
 
       $http.post('http://localhost:8080/link',shareLink.link)
       .success(function(dados) {

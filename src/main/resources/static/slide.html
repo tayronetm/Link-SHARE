@@ -1,0 +1,54 @@
+<!doctype html>
+<head>
+	<title></title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="responsiveslides.min.js"></script>
+
+  <style type="text/css">
+#slideshow {
+  margin: 80px auto;
+  position: relative;
+  width: 240px;
+  height: 240px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+#slideshow > div {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+</style>
+
+</head>
+<body>
+
+	<div id="slideshow">
+   <div>
+     <img src="http://ftop.ru/mini/201611/583a49b10b30c.jpg">
+   </div>
+   <div>
+     <img src="http://ftop.ru/mini/201611/583a18ba14030.jpg">
+   </div>
+</div>
+
+	<script>
+		$("#slideshow > div:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  3000);
+	</script>
+
+
+</body>
+</html>

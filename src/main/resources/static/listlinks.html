@@ -5,6 +5,10 @@
 
   <link rel="stylesheet" href="teste/css/links.css">
   <link rel="stylesheet" href="teste/css/snip1217.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="responsiveslides.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+  <script type="text/javascript" src="engine1/jquery.js"></script>
 
   <style type="text/css">
 .leftContainer{
@@ -27,6 +31,22 @@
     width: 100%;
     height: 100%;
 }
+#slideshow {
+  margin: 80px auto;
+  position: relative;
+  width: 240px;
+  height: 240px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+#slideshow > div {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
 .box{
     width: 400px;
     min-height: 128px;
@@ -37,19 +57,26 @@
 -moz-box-shadow: 10px 10px 24px 8px #898984;
 box-shadow: 10px 10px 24px 8px #898984;
 }
+.boxSlide{
+    width: 400px;
+    min-height: 128px;
+    max-height: 128px;
+    margin-left: 660px;
+    margin-bottom: 210px;
+   
+}
 .boxContainer{
     width: 500px;
     min-height: 150px;
     max-height: 150px;
     margin-top: 20px;
-    display: inline-flex;
+    //wewedisplay: inline-flex; 
 }
 .image{
   width: 150px;
   min-height: 150px;
   max-height: 150px;
   box-shadow: 10px 10px 24px 8px #898984;
-  border-radius: 50%;
   margin-left: -50px;
   margin-top: -8px;
   align-self: flex-start;
@@ -82,39 +109,87 @@ box-shadow: 10px 10px 24px 8px #898984;
   width: 24px;
   height: 24px;
 }
+.btn-merge{
+  margin-left:30px;
+}
+.h1 {
+    letter-spacing: 3px;
+}
+.relative {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 1200px;
+    height: 530px
+}
 
 
 </style>
 </head>
 <body>
 <div ng-controller="shareLinkController as shareLink" ng-init="shareLink.getLinks()">
-<div style="background-color: #4285f4;" >
+<div style="background-color: #1C1C1C;" >
   <div class="rightContainer">
-    <img class="imageProfile" ng-src="{{shareLink.getUser().photoURL}}"/>
-    <font size="2">Olá, {{shareLink.getUser().displayName}}</font>
+    <!--<img class="imageProfile" ng-src="{{shareLink.getUser().photoURL}}"/>-->
+ 
   </div>
   <ul class="snip1217 centerContainer">
     <li class="current"><a href="#/listlinks" data-hover="Home">Página principal</a></li>
     <li><a href="#/sobre" data-hover="About Us">Quem somos</a></li>
     <li><a href="#/addlink" data-hover="Blog">Adicionar link</a></li>
     <li><a href="#/contato" data-hover="Contact">Contato</a></li>
+    <li font size="2">Olá, {{shareLink.getUser().displayName}}</li>
   </ul>
 </div>
 
 
-<div style="background-color: #4285f4;margin-top: 0px;" class="jumbotron text-center">
-	<h1>Lista de links </h1>
+<div style="background-color: #1C1C1C;margin-top: 0px;" class="jumbotron text-left">
+  <!--<h1>Link Share </h1>-->
+
+ <div class='boxSlide'>
+     <div id="wowslider-container1">
+  <div class="ws_images"><ul>
+    <li><img src="data1/images/android.jpg" alt="Android" title="Android" id="wows1_0"/></li>
+    <li><img src="data1/images/blu_processada.jpg" alt="BLU processada" title="BLU processada" id="wows1_1"/></li>
+    <li><img src="data1/images/cartes_certificados_para_apps_android.jpg" alt="Cartões certificados para apps Android" title="Cartões certificados para apps Android" id="wows1_2"/></li>
+    <li><img src="data1/images/equipe_do_tor_est_desenvolvendo_rom_segura.jpg" alt="Equipe do Tor está desenvolvendo ROM segura" title="Equipe do Tor está desenvolvendo ROM segura" id="wows1_3"/></li>
+    <li><img src="data1/images/festival_musical_da_google.jpg" alt="Festival musical da Google" title="Festival musical da Google" id="wows1_4"/></li>
+    <li><a href="http://wowslider.com"><img src="data1/images/novo_supercomputador.jpg" alt="wowslider.com" title="Novo supercomputador" id="wows1_5"/></a></li>
+    <li><img src="data1/images/nvidia_far_palestras_de_carros_autnomos.jpg" alt="Nvidia fará palestras de carros autônomos" title="Nvidia fará palestras de carros autônomos" id="wows1_6"/></li>
+  </ul></div>
+  <div class="ws_bullets"><div>
+    <a href="#" title="Android"><span><img src="data1/tooltips/android.jpg" alt="Android"/>1</span></a>
+    <a href="#" title="BLU processada"><span><img src="data1/tooltips/blu_processada.jpg" alt="BLU processada"/>2</span></a>
+    <a href="#" title="Cartões certificados para apps Android"><span><img src="data1/tooltips/cartes_certificados_para_apps_android.jpg" alt="Cartões certificados para apps Android"/>3</span></a>
+    <a href="#" title="Equipe do Tor está desenvolvendo ROM segura"><span><img src="data1/tooltips/equipe_do_tor_est_desenvolvendo_rom_segura.jpg" alt="Equipe do Tor está desenvolvendo ROM segura"/>4</span></a>
+    <a href="#" title="Festival musical da Google"><span><img src="data1/tooltips/festival_musical_da_google.jpg" alt="Festival musical da Google"/>5</span></a>
+    <a href="#" title="Novo supercomputador"><span><img src="data1/tooltips/novo_supercomputador.jpg" alt="Novo supercomputador"/>6</span></a>
+    <a href="#" title="Nvidia fará palestras de carros autônomos"><span><img src="data1/tooltips/nvidia_far_palestras_de_carros_autnomos.jpg" alt="Nvidia fará palestras de carros autônomos"/>7</span></a>
+  </div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">wowslider</a> by WOWSlider.com v8.7</div>
+  <div class="ws_shadow"></div>
+  </div>
+</div>
+
+  <script type="text/javascript" src="engine1/wowslider.js"></script>
+  <script type="text/javascript" src="engine1/script.js"></script>
+  <div STYLE="font-weight: bold; margin-left: 95px">
+  <div class="relative">
+   <img src="img/linkshare.png">
+   </div>
   <small>Fique à vontade para escolher um dos links abaixo postados por nossos usuários.</small>
+  </div>
 
 </div>
 
+ <div class='centerContainer'>
+    <button class="btn btn-primary" ng-click="shareLink.orderBy('-rate')">Melhores Avaliações</button>
+    <button class="btn btn-primary" ng-click="shareLink.orderBy('rate')">Piores Avaliações</button>
+    <button class="btn btn-primary" ng-click="shareLink.orderBy('link')">A - Z</button>
+    <button class="btn btn-primary" ng-click="shareLink.orderBy('-link')">Z - A</button>
+  </div>
 
-<div class='centerContainer'>
-    <button class="btn btn-large btn-success" ng-click="shareLink.orderBy('-rate')">Melhores Avaliações</button>
-    <button class="btn btn-large btn-success" ng-click="shareLink.orderBy('rate')">Piores Avaliações</button>
-    <button class="btn btn-large btn-success" ng-click="shareLink.orderBy('link')">A - Z</button>
-    <button class="btn btn-large btn-success" ng-click="shareLink.orderBy('-link')">Z - A</button>
-</div>
+
+
 
 <div class="fullspace">
 
@@ -158,5 +233,19 @@ box-shadow: 10px 10px 24px 8px #898984;
 
 
   </div>
+
+    <script>
+    $("#slideshow > div:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  3000);
+  </script>
+
 </body>
 </html>

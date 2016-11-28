@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lista de links</title>
-  <link rel="import" href="teste/css/links.css">
-  <link rel="import" href="teste/css/snip1217.css">
+  <title>Adicionar link</title>
+  <link rel="stylesheet" href="teste/css/links.css">
+  <link rel="stylesheet" href="teste/css/snip1217.css">
 </head>
 <body>
 
-
-<ul  style="background-color: #4285f4;"  class="snip1217">
-  <li class="current"><a href="#/listlinks" data-hover="Home">Página principal</a></li>
-  <li><a href="#/sobre" data-hover="About Us">Quem somos</a></li>
-  <li><a href="#/addlink" data-hover="Blog">Adicionar link</a></li>
-  <li><a href="#/contato" data-hover="Contact">Contato</a></li>
-</ul>
-
-</body>
+ <body>
+<div ng-controller="shareLinkController as shareLink" ng-init="shareLink.getLinks()">
+<div style="background-color: #1C1C1C;" >
+  <div class="rightContainer">
+    <!--<img class="imageProfile" ng-src="{{shareLink.getUser().photoURL}}"/>-->
+ 
+  </div>
+  <ul class="snip1217 centerContainer">
+    <li class="current"><a href="#/listlinks" data-hover="Home">Página principal</a></li>
+    <li><a href="#/sobre" data-hover="About Us">Quem somos</a></li>
+    <li><a href="#/addlink" data-hover="Blog">Adicionar link</a></li>
+    <li><a href="#/contato" data-hover="Contact">Contato</a></li>
+    <li font size="2">Olá, {{shareLink.getUser().displayName}}</li>
+  </ul>
 </div>
 
-<div style="background-color: #4285f4;"  class="jumbotron text-center">
-	<h1>Quem somos? </h1>
 
-</div>
+<div ng-controller="shareLinkController as shareLink">
+    <div  style="background-color: #1C1C1C;" class="jumbotron text-center">
+        <h1><span class="fa fa-lock"></span> Quem somos? </h1>
+    </div>
